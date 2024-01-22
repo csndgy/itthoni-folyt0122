@@ -1,0 +1,79 @@
+﻿<Window x:Class="felvetelizok.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:felvetelizok"
+        mc:Ignorable="d" WindowStyle="None"
+        Title="Felvételizők Listája" AllowsTransparency="True" Height="450" Width="800" Background="Transparent">
+    <Border BorderThickness="3"
+        CornerRadius="15">
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#462AD8" Offset="0"/>
+                <GradientStop Color="#DA34AE" Offset="0.75"/>
+                <GradientStop Color="#8A16C1" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <GradientStop Color="#462AD8" Offset="0"/>
+                <GradientStop Color="#DA34AE" Offset="0.75"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <DataGrid x:Name="dgAdatok" Background="Transparent" Grid.RowSpan="4" BorderThickness="0" >
+
+            </DataGrid>
+            
+            <Button  Background="#FE6584" Height="95" Grid.Column="1" Content="Új diák" FontWeight="DemiBold" FontSize="24">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="40"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button  Background="#FE6584" Height="95" Grid.Row="1" Grid.Column="1" Content="Törlés" FontSize="24" FontWeight="DemiBold">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="40"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="btnImport" Background="#FE6584" Height="95" Grid.Row="2" Grid.Column="1" Content="Import" FontSize="24" FontWeight="DemiBold" Click="Button_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="40"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button  Background="#FE6584" Height="95" Grid.Row="3" Grid.Column="1" Content="Export" FontSize="24" FontWeight="DemiBold">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="40"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Grid Grid.ColumnSpan="2" Height="2" VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="16*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
